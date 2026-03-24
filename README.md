@@ -61,31 +61,8 @@ Each university object typically includes:
 * JavaScript (fetch, async/await, higher-order functions)
 * Public API
 
-## Project Structure
-
-UniVerse/
-├─ index.html
-├─ styles/
-│   └─ styles.css
-├─ scripts/
-│   └─ app.js
-├─ assets/
-│   └─ (images or icons if required)
-└─ README.md
-
 ## How to Run
 
 1. Clone or download the repository
 2. Open the project folder
 3. Open index.html in a browser
-
-## Future Improvements
-
-* Add pagination for better handling of large data
-* Add a feature to save favorite universities
-* Improve UI styling and layout
-* Add more comparison details
-
-## Conclusion
-
-This project helped me understand how to work with APIs and manipulate data using JavaScript. It also gave me experience in building a simple but functional user interface.
