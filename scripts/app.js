@@ -4,10 +4,9 @@ async function getUniversities(country) {
 
   try {
     const res = await fetch(
-     "http://universities.hipolabs.com/search?country=" + country
+      "https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json"
     );
     const allData = await res.json();
-    await console.log(allData);
 
     // Filter by country (case-insensitive)
     const data = allData.filter(
