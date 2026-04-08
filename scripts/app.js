@@ -3,13 +3,26 @@ async function getUniversities(country) {
   container.innerHTML = "Fetching Data...";
 
   try {
-    const res = await fetch(`http://universities.hipolabs.com/search?country=${country}`);
-    const data = await res.json();
+    const res = await fetch(
+     "http://universities.hipolabs.com/search?country=" + country
+    );
+    const allData = await res.json();
+    await console.log(allData);
+
+    // Filter by country (case-insensitive)
+    const data = allData.filter(
+      (u) => u.country.toLowerCase() === country.toLowerCase()
+    );
+
+    if (data.length === 0) {
+      container.innerHTML = "No universities found for \"" + country + "\". Check the country name and try again.";
+      return;
+    }
 
     displayData(data);
 
   } catch (error) {
-    container.innerHTML = "Something went wrong";
+    container.innerHTML = "Something went wrong. Please try again.";
     console.log(error);
   }
 }
