@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>UniVerse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/style.css">
 </head>
 
@@ -14,6 +15,23 @@
   <div class="searchBox">
     <input type="text" id="country" placeholder="Enter country name">
     <button onclick="handleSearch()">Search</button>
+    <button onclick="toggleDarkMode()" id="darkBtn">🌙 Dark Mode</button>
+  </div>
+
+  <div class="controls" id="controls" style="display:none;">
+    <input type="text" id="nameSearch" placeholder="Search by name..." oninput="handleNameSearch()">
+
+    <div class="filterButtons">
+      <button onclick="handleFilter('all')">All</button>
+      <button onclick="handleFilter('technology')">Technology</button>
+      <button onclick="handleFilter('engineering')">Engineering</button>
+    </div>
+
+    <select id="sortOrder" onchange="handleSort()">
+      <option value="">Sort by name...</option>
+      <option value="az">A → Z</option>
+      <option value="za">Z → A</option>
+    </select>
   </div>
 
   <div id="container"></div>

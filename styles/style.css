@@ -106,3 +106,58 @@ button:hover {
     width: 90%;
   }
 }
+
+.controls {
+  text-align: center;
+  margin: 10px 20px;
+}
+
+.controls input {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #64748B;
+  margin-bottom: 8px;
+}
+
+.filterButtons {
+  margin: 8px 0;
+}
+
+.filterButtons button {
+  margin: 0 4px;
+}
+
+.controls select {
+  padding: 8px;
+  border: 1px solid #64748B;
+  cursor: pointer;
+}
+
+body.dark {
+  background-color: #0F172A;
+  color: #E2E8F0;
+}
+
+body.dark h1 {
+  background-color: #1E293B;
+}
+
+body.dark .card {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+body.dark .card h3 {
+  color: #E2E8F0;
+}
+
+body.dark .card p {
+  color: #94A3B8;
+}
+
+body.dark input,
+body.dark select {
+  background-color: #1E293B;
+  color: #E2E8F0;
+  border-color: #334155;
+}

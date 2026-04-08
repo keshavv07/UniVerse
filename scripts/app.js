@@ -8,7 +8,6 @@ async function getUniversities(country) {
     );
     const allData = await res.json();
 
-    // Filter by country (case-insensitive)
     const data = allData.filter(
       (u) => u.country.toLowerCase() === country.toLowerCase()
     );
@@ -17,6 +16,13 @@ async function getUniversities(country) {
       container.innerHTML = "No universities found for \"" + country + "\". Check the country name and try again.";
       return;
     }
+
+    allUniversities = data;
+
+    document.getElementById("nameSearch").value = "";
+    document.getElementById("sortOrder").value = "";
+    document.getElementById("controls").style.display = "block";
+    activeFilter = "all";
 
     displayData(data);
 
@@ -67,4 +73,55 @@ function handleSearch() {
   }
 
   getUniversities(country);
+}
+
+var allUniversities = [];
+var activeFilter = "all";
+
+function showData() {
+  var nameQuery = document.getElementById("nameSearch").value.toLowerCase();
+  var sortVal = document.getElementById("sortOrder").value;
+
+  var result = allUniversities.filter(function (u) {
+    return u.name.toLowerCase().includes(nameQuery);
+  });
+
+  if (activeFilter !== "all") {
+    result = result.filter(function (u) {
+      return u.name.toLowerCase().includes(activeFilter);
+    });
+  }
+
+  if (sortVal === "az") {
+    result = result.sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    });
+  } else if (sortVal === "za") {
+    result = result.sort(function (a, b) {
+      return b.name.localeCompare(a.name);
+    });
+  }
+
+  displayData(result);
+}
+
+function handleNameSearch() {
+  showData();
+}
+function handleFilter(keyword) {
+  activeFilter = keyword;
+  showData();
+}
+
+function handleSort() {
+  showData();
+}
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+  var btn = document.getElementById("darkBtn");
+  if (document.body.classList.contains("dark")) {
+    btn.innerText = "☀️ Light Mode";
+  } else {
+    btn.innerText = "🌙 Dark Mode";
+  }
 }
