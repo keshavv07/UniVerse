@@ -105,17 +105,16 @@ function showData() {
   displayData(result);
 }
 
-function handleNameSearch() {
-  showData();
-}
-function handleFilter(keyword) {
-  activeFilter = keyword;
-  showData();
-}
 
-function handleSort() {
-  showData();
-}
+document.getElementById("nameSearch").addEventListener("input", showData);
+document.getElementById("sortOrder").addEventListener("change", showData);
+
+document.querySelectorAll(".filterButtons [data-filter]").forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    activeFilter = btn.dataset.filter;
+    showData();
+  });
+});
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
   var btn = document.getElementById("darkBtn");

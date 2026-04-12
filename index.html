@@ -19,15 +19,15 @@
   </div>
 
   <div class="controls" id="controls" style="display:none;">
-    <input type="text" id="nameSearch" placeholder="Search by name..." oninput="handleNameSearch()">
+    <input type="text" id="nameSearch" placeholder="Search by name...">
 
     <div class="filterButtons">
-      <button onclick="handleFilter('all')">All</button>
-      <button onclick="handleFilter('technology')">Technology</button>
-      <button onclick="handleFilter('engineering')">Engineering</button>
+      <button data-filter="all">All</button>
+      <button data-filter="technology">Technology</button>
+      <button data-filter="engineering">Engineering</button>
     </div>
 
-    <select id="sortOrder" onchange="handleSort()">
+    <select id="sortOrder">
       <option value="">Sort by name...</option>
       <option value="az">A → Z</option>
       <option value="za">Z → A</option>
