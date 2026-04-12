@@ -1,68 +1,31 @@
-# UniVerse – University Finder & Comparator
+# UniVerse
 
-UniVerse is a web application that allows users to search and explore universities from different countries. It uses a public API to fetch real data and provides features like search, filtering, sorting, and comparison.
+UniVerse is a simple web app that lets you search and explore universities from around the world. Enter a country name, and it fetches real data from a public dataset — you can then filter by type, sort alphabetically, or search by name within the results.
 
-## Project Overview
+I built this as part of my JavaScript learning, mainly to practice working with APIs, JSON data, and array methods in a real project.
 
-This project is built as part of my JavaScript course. The main goal is to apply concepts like API integration, working with JSON data, and using array higher-order functions in a practical way.
+## What it does
 
-The application is designed to help users:
+- Enter a country name to fetch universities from that country
+- Search within the results by university name
+- Filter by category — All, Technology, or Engineering
+- Sort results A to Z or Z to A
+- Each result shows the university name, country, domain, and a link to their website
+- Dark mode toggle
 
-* Find universities based on country
-* Search universities by name
-* Filter and sort results
-* Compare a few universities side-by-side
+## Tech used
 
-## Objectives
+- HTML
+- CSS
+- JavaScript — fetch, async/await, array methods (filter, sort), event listeners
 
-* Use the fetch API to retrieve data from a public API
-* Practice working with JSON, arrays, and objects
-* Use array higher-order functions such as filter, map, and sort
-* Build a simple and responsive user interface
+## Data source
 
-## API Used
+Api - "https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json"
 
-This project uses the Hipo University Domains and Names API.
+Uses the [Hipo University Domains List](https://github.com/Hipo/university-domains-list) — a public JSON dataset hosted on GitHub.
 
-Base URL:
-http://universities.hipolabs.com
+## How to run
 
-Example endpoints:
-
-* Universities in India:
-  http://universities.hipolabs.com/search?country=India
-
-* Universities in India with “Technology” in the name:
-  http://universities.hipolabs.com/search?country=India&name=Technology
-
-Each university object typically includes:
-
-* name
-* country
-* alpha_two_code
-* state-province
-* web_pages
-* domains
-
-## Features
-
-* Search universities by name
-* Select a country to fetch universities
-* Filter universities based on keywords like “Technology” or “Engineering”
-* Sort results alphabetically
-* Display universities in a card format
-* Compare 2–3 universities together in a separate section
-* Basic responsive layout
-
-## Technologies Used
-
-* HTML
-* CSS
-* JavaScript (fetch, async/await, higher-order functions)
-* Public API
-
-## How to Run
-
-1. Clone or download the repository
-2. Open the project folder
-3. Open index.html in a browser
+1. Clone the repo
+2. Open `index.html` in a browser
